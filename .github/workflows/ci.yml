@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git submodule update --init --recursive --force
-      - run: docker build .
+      - run: ./build.sh
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
